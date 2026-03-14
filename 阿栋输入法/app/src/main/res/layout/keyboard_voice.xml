@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- 标题 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="语音输入"
+        android:textSize="20sp"
+        android:textColor="@color/key_text"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- 波形图容器 -->
+    <LinearLayout
+        android:id="@+id/wave_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wave_height"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/surface"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp">
+
+        <!-- 波形图将通过代码动态生成 -->
+
+    </LinearLayout>
+
+    <!-- 语音状态 -->
+    <TextView
+        android:id="@+id/voice_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint_voice_input"
+        android:textSize="16sp"
+        android:textColor="@color/key_text"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- 识别结果 -->
+    <TextView
+        android:id="@+id/recognition_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/primary"
+        android:gravity="center"
+        android:padding="12dp"
+        android:background="@color/surface"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone" />
+
+    <!-- 语音按钮 -->
+    <Button
+        android:id="@+id/btn_start_voice"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/voice_button_bg"
+        android:text="🎤"
+        android:textSize="32sp"
+        android:textColor="@color/on_primary"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 语言选择 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="语言:"
+            android:textSize="14sp"
+            android:textColor="@color/key_text"
+            android:layout_marginEnd="8dp" />
+
+        <Spinner
+            android:id="@+id/language_spinner_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- 最近识别结果 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="最近识别:"
+        android:textSize="14sp"
+        android:textColor="@color/key_text"
+        android:gravity="start"
+        android:paddingBottom="8dp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:paddingVertical="8dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:id="@+id/recent_results"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp" />
+
+    </HorizontalScrollView>
+
+    <!-- 功能按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_clear_voice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="清空"
+            android:layout_marginHorizontal="4dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_copy_voice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="复制"
+            android:layout_marginHorizontal="4dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_settings_voice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="设置"
+            android:layout_marginHorizontal="4dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+    </LinearLayout>
+
+    <!-- 权限提示 -->
+    <TextView
+        android:id="@+id/permission_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/warning"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:visibility="gone" />
+
+</LinearLayout>

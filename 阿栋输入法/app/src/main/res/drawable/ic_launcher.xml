@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    
+    <!-- 圆形背景 -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M36,36m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0" />
+    
+    <!-- 键盘轮廓 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,24h36v24h-36z" />
+    
+    <!-- 键盘按键 -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M22,28h8v8h-8z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M32,28h8v8h-8z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M42,28h8v8h-8z" />
+    
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M22,38h8v8h-8z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M32,38h8v8h-8z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M42,38h8v8h-8z" />
+    
+    <!-- 中文字符"阿" -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,52h4v4h-4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,48h4v8h-4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,52h4v4h-4z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,48h4v8h-4z" />
+    
+</vector>

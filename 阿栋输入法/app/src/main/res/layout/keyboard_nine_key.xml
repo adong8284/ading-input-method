@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <!-- 第一行：1(.) 2(abc) 3(def) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_1_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1\n."
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_2_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2\nabc"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_3_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3\ndef"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 第二行：4(ghi) 5(jkl) 6(mno) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_4_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4\nghi"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_5_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5\njkl"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_6_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6\nmno"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 第三行：7(pqrs) 8(tuv) 9(wxyz) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_7_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7\npqrs"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_8_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8\ntuv"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_9_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="9\nwxyz"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 第四行：* 0(#+) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_star_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="*"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_0_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0\n#+"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_pound_nine"
+            style="@style/KeyboardKey.NineKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="#"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 功能行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_switch_nine"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="中/英"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_comma_nine"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text=","
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_space_nine"
+            style="@style/KeyboardKey.Space"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_key_height"
+            android:layout_weight="2"
+            android:text="空格"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_period_nine"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="."
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_backspace_nine"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="⌫"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 候选词行 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:paddingVertical="4dp">
+
+        <LinearLayout
+            android:id="@+id/candidate_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp" />
+
+    </HorizontalScrollView>
+
+    <!-- 拼音显示 -->
+    <TextView
+        android:id="@+id/pinyin_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/key_text"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:visibility="gone" />
+
+</LinearLayout>

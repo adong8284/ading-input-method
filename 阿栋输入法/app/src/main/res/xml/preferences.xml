@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 外观设置 -->
+    <PreferenceCategory android:title="外观设置">
+
+        <ListPreference
+            android:key="theme"
+            android:title="主题"
+            android:summary="选择键盘主题"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/theme_values"
+            android:defaultValue="light"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            android:key="theme_config"
+            android:title="主题配置"
+            android:summary="自定义主题颜色和背景" />
+
+        <SwitchPreferenceCompat
+            android:key="vibration"
+            android:title="按键振动"
+            android:summary="启用按键振动反馈"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="sound"
+            android:title="按键音效"
+            android:summary="启用按键声音反馈"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- 输入设置 -->
+    <PreferenceCategory android:title="输入设置">
+
+        <SwitchPreferenceCompat
+            android:key="auto_correction"
+            android:title="自动纠错"
+            android:summary="自动纠正拼写错误"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="auto_capitalization"
+            android:title="自动大写"
+            android:summary="句子开头自动大写"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="double_space_period"
+            android:title="双击空格输入句号"
+            android:summary="快速输入句号"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="swipe_typing"
+            android:title="滑行输入"
+            android:summary="通过滑动手指输入单词"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="swipe_sensitivity"
+            android:title="滑行敏感度"
+            android:summary="调整滑行输入的敏感度"
+            android:entries="@array/sensitivity_entries"
+            android:entryValues="@array/sensitivity_values"
+            android:defaultValue="medium"
+            android:dependency="swipe_typing"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:key="show_trail"
+            android:title="显示滑动轨迹"
+            android:summary="显示滑行输入的轨迹"
+            android:defaultValue="true"
+            android:dependency="swipe_typing" />
+
+    </PreferenceCategory>
+
+    <!-- 词库设置 -->
+    <PreferenceCategory android:title="词库设置">
+
+        <SwitchPreferenceCompat
+            android:key="user_learning"
+            android:title="用户词频学习"
+            android:summary="根据使用习惯调整词频"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="cloud_sync"
+            android:title="云同步"
+            android:summary="同步词库和用户数据到云端"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="dictionary_manager"
+            android:title="词库管理"
+            android:summary="管理拼音、五笔、英文词库" />
+
+        <Preference
+            android:key="import_dictionary"
+            android:title="导入词库"
+            android:summary="从文件导入词库数据" />
+
+        <Preference
+            android:key="export_dictionary"
+            android:title="导出词库"
+            android:summary="导出词库数据到文件" />
+
+        <Preference
+            android:key="clear_learning_data"
+            android:title="清除学习数据"
+            android:summary="清除用户词频学习数据" />
+
+    </PreferenceCategory>
+
+    <!-- 剪贴板设置 -->
+    <PreferenceCategory android:title="剪贴板设置">
+
+        <SwitchPreferenceCompat
+            android:key="clipboard_history"
+            android:title="剪贴板历史"
+            android:summary="记录剪贴板历史内容"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="clipboard_history_size"
+            android:title="历史记录数量"
+            android:summary="设置最大剪贴板历史记录数"
+            android:entries="@array/history_size_entries"
+            android:entryValues="@array/history_size_values"
+            android:defaultValue="50"
+            android:dependency="clipboard_history"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:key="clipboard_encryption"
+            android:title="加密存储"
+            android:summary="加密存储剪贴板历史"
+            android:defaultValue="true"
+            android:dependency="clipboard_history" />
+
+        <Preference
+            android:key="clipboard_settings"
+            android:title="剪贴板设置"
+            android:summary="管理剪贴板权限和历史记录" />
+
+        <Preference
+            android:key="clear_clipboard_history"
+            android:title="清除剪贴板历史"
+            android:summary="清除所有剪贴板历史记录"
+            android:dependency="clipboard_history" />
+
+    </PreferenceCategory>
+
+    <!-- 语音设置 -->
+    <PreferenceCategory android:title="语音输入">
+
+        <ListPreference
+            android:key="voice_language"
+            android:title="语音语言"
+            android:summary="选择语音识别语言"
+            android:entries="@array/voice_language_entries"
+            android:entryValues="@array/voice_language_values"
+            android:defaultValue="zh-CN"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:key="voice_offline"
+            android:title="离线语音"
+            android:summary="启用离线语音识别"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="voice_auto_punctuation"
+            android:title="自动标点"
+            android:summary="自动添加标点符号"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="voice_show_waveform"
+            android:title="显示波形"
+            android:summary="显示语音输入波形"
+            android:defaultValue="true" />
+
+        <Preference
+            android:key="voice_settings"
+            android:title="语音设置"
+            android:summary="语音输入高级设置" />
+
+    </PreferenceCategory>
+
+    <!-- 手写设置 -->
+    <PreferenceCategory android:title="手写输入">
+
+        <ListPreference
+            android:key="handwriting_language"
+            android:title="手写语言"
+            android:summary="选择手写识别语言"
+            android:entries="@array/handwriting_language_entries"
+            android:entryValues="@array/handwriting_language_values"
+            android:defaultValue="zh-Hans"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:key="handwriting_continuous"
+            android:title="连续识别"
+            android:summary="连续识别多个字符"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="handwriting_show_stroke"
+            android:title="显示笔迹"
+            android:summary="显示手写笔迹"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="handwriting_stroke_color"
+            android:title="笔迹颜色"
+            android:summary="选择手写笔迹颜色"
+            android:entries="@array/stroke_color_entries"
+            android:entryValues="@array/stroke_color_values"
+            android:defaultValue="black"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            android:key="handwriting_settings"
+            android:title="手写设置"
+            android:summary="手写输入高级设置" />
+
+    </PreferenceCategory>
+
+    <!-- 表情设置 -->
+    <PreferenceCategory android:title="表情符号">
+
+        <SwitchPreferenceCompat
+            android:key="emoji_recent"
+            android:title="显示最近使用"
+            android:summary="显示最近使用的表情"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="emoji_size"
+            android:title="表情大小"
+            android:summary="调整表情显示大小"
+            android:entries="@array/emoji_size_entries"
+            android:entryValues="@array/emoji_size_values"
+            android:defaultValue="medium"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:key="emoji_skin_tone"
+            android:title="肤色变体"
+            android:summary="显示表情的肤色变体"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="emoji_gender"
+            android:title="性别变体"
+            android:summary="显示表情的性别变体"
+            android:defaultValue="true" />
+
+        <Preference
+            android:key="clear_emoji_history"
+            android:title="清除表情历史"
+            android:summary="清除最近使用的表情记录" />
+
+    </PreferenceCategory>
+
+    <!-- 高级设置 -->
+    <PreferenceCategory android:title="高级设置">
+
+        <SwitchPreferenceCompat
+            android:key="debug_mode"
+            android:title="调试模式"
+            android:summary="启用调试日志"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="auto_update"
+            android:title="自动更新"
+            android:summary="自动检查更新"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="crash_report"
+            android:title="崩溃报告"
+            android:summary="发送崩溃报告帮助改进"
+            android:defaultValue="true" />
+
+        <Preference
+            android:key="export_settings"
+            android:title="导出设置"
+            android:summary="导出当前所有设置" />
+
+        <Preference
+            android:key="import_settings"
+            android:title="导入设置"
+            android:summary="从文件导入设置" />
+
+    </PreferenceCategory>
+
+    <!-- 关于 -->
+    <PreferenceCategory android:title="关于">
+
+        <Preference
+            android:key="version"
+            android:title="版本"
+            android:summary="1.0.0"
+            android:selectable="false" />
+
+        <Preference
+            android:key="about"
+            android:title="关于阿栋输入法"
+            android:summary="查看应用信息和功能说明" />
+
+        <Preference
+            android:key="privacy_policy"
+            android:title="隐私政策"
+            android:summary="查看隐私政策" />
+
+        <Preference
+            android:key="terms_of_service"
+            android:title="服务条款"
+            android:summary="查看服务条款" />
+
+        <Preference
+            android:key="open_source"
+            android:title="开源许可"
+            android:summary="查看使用的开源项目" />
+
+        <Preference
+            android:key="reset_settings"
+            android:title="重置设置"
+            android:summary="恢复所有设置为默认值" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

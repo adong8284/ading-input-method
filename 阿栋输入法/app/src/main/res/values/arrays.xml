@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 主题选项 -->
+    <string-array name="theme_entries">
+        <item>浅色主题</item>
+        <item>深色主题</item>
+        <item>护眼主题</item>
+        <item>赛博主题</item>
+        <item>水墨主题</item>
+    </string-array>
+    
+    <string-array name="theme_values">
+        <item>light</item>
+        <item>dark</item>
+        <item>eye_protection</item>
+        <item>cyberpunk</item>
+        <item>ink_wash</item>
+    </string-array>
+    
+    <!-- 敏感度选项 -->
+    <string-array name="sensitivity_entries">
+        <item>低</item>
+        <item>中</item>
+        <item>高</item>
+    </string-array>
+    
+    <string-array name="sensitivity_values">
+        <item>low</item>
+        <item>medium</item>
+        <item>high</item>
+    </string-array>
+    
+    <!-- 历史记录数量 -->
+    <string-array name="history_size_entries">
+        <item>20条</item>
+        <item>50条</item>
+        <item>100条</item>
+        <item>200条</item>
+        <item>500条</item>
+    </string-array>
+    
+    <string-array name="history_size_values">
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>500</item>
+    </string-array>
+    
+    <!-- 语音语言 -->
+    <string-array name="voice_language_entries">
+        <item>中文（普通话）</item>
+        <item>英语（美国）</item>
+        <item>日语</item>
+        <item>韩语</item>
+        <item>法语</item>
+        <item>德语</item>
+        <item>西班牙语</item>
+        <item>阿拉伯语</item>
+        <item>俄语</item>
+    </string-array>
+    
+    <string-array name="voice_language_values">
+        <item>zh-CN</item>
+        <item>en-US</item>
+        <item>ja-JP</item>
+        <item>ko-KR</item>
+        <item>fr-FR</item>
+        <item>de-DE</item>
+        <item>es-ES</item>
+        <item>ar-SA</item>
+        <item>ru-RU</item>
+    </string-array>
+    
+    <!-- 手写语言 -->
+    <string-array name="handwriting_language_entries">
+        <item>中文（简体）</item>
+        <item>中文（繁体）</item>
+        <item>英语（美国）</item>
+        <item>日语</item>
+        <item>韩语</item>
+        <item>法语</item>
+        <item>德语</item>
+        <item>西班牙语</item>
+        <item>阿拉伯语</item>
+        <item>俄语</item>
+    </string-array>
+    
+    <string-array name="handwriting_language_values">
+        <item>zh-Hans</item>
+        <item>zh-Hant</item>
+        <item>en-US</item>
+        <item>ja-JP</item>
+        <item>ko-KR</item>
+        <item>fr-FR</item>
+        <item>de-DE</item>
+        <item>es-ES</item>
+        <item>ar-SA</item>
+        <item>ru-RU</item>
+    </string-array>
+    
+    <!-- 笔迹颜色 -->
+    <string-array name="stroke_color_entries">
+        <item>黑色</item>
+        <item>蓝色</item>
+        <item>红色</item>
+        <item>绿色</item>
+    </string-array>
+    
+    <string-array name="stroke_color_values">
+        <item>black</item>
+        <item>blue</item>
+        <item>red</item>
+        <item>green</item>
+    </string-array>
+    
+    <!-- 表情大小 -->
+    <string-array name="emoji_size_entries">
+        <item>小</item>
+        <item>中</item>
+        <item>大</item>
+        <item>特大</item>
+    </string-array>
+    
+    <string-array name="emoji_size_values">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+        <item>xlarge</item>
+    </string-array>
+    
+    <!-- 表情分类 -->
+    <string-array name="emoji_category_entries">
+        <item>最近使用</item>
+        <item>表情与人物</item>
+        <item>动物与自然</item>
+        <item>食物与饮料</item>
+        <item>活动</item>
+        <item>旅行与地点</item>
+        <item>物品</item>
+        <item>符号</item>
+        <item>旗帜</item>
+    </string-array>
+    
+    <!-- 输入法类型 -->
+    <string-array name="input_method_entries">
+        <item>全键盘</item>
+        <item>九宫格</item>
+        <item>手写</item>
+        <item>语音</item>
+        <item>表情</item>
+    </string-array>
+    
+    <string-array name="input_method_values">
+        <item>qwerty</item>
+        <item>nine_key</item>
+        <item>handwriting</item>
+        <item>voice</item>
+        <item>emoji</item>
+    </string-array>
+    
+    <!-- 词库类型 -->
+    <string-array name="dictionary_type_entries">
+        <item>拼音词库</item>
+        <item>五笔词库</item>
+        <item>英文词库</item>
+        <item>医学词库</item>
+        <item>法律词库</item>
+        <item>编程词库</item>
+        <item>自定义词库</item>
+    </string-array>
+    
+    <string-array name="dictionary_type_values">
+        <item>pinyin</item>
+        <item>wubi</item>
+        <item>english</item>
+        <item>medical</item>
+        <item>legal</item>
+        <item>programming</item>
+        <item>custom</item>
+    </string-array>
+    
+    <!-- 同步频率 -->
+    <string-array name="sync_frequency_entries">
+        <item>从不</item>
+        <item>每天</item>
+        <item>每周</item>
+        <item>每月</item>
+        <item>手动</item>
+    </string-array>
+    
+    <string-array name="sync_frequency_values">
+        <item>never</item>
+        <item>daily</item>
+        <item>weekly</item>
+        <item>monthly</item>
+        <item>manual</item>
+    </string-array>
+    
+    <!-- 振动强度 -->
+    <string-array name="vibration_strength_entries">
+        <item>弱</item>
+        <item>中</item>
+        <item>强</item>
+    </string-array>
+    
+    <string-array name="vibration_strength_values">
+        <item>weak</item>
+        <item>medium</item>
+        <item>strong</item>
+    </string-array>
+    
+    <!-- 声音类型 -->
+    <string-array name="sound_type_entries">
+        <item>经典</item>
+        <item>机械</item>
+        <item>电子</item>
+        <item>自然</item>
+        <item>无声</item>
+    </string-array>
+    
+    <string-array name="sound_type_values">
+        <item>classic</item>
+        <item>mechanical</item>
+        <item>electronic</item>
+        <item>natural</item>
+        <item>silent</item>
+    </string-array>
+    
+    <!-- 字体大小 -->
+    <string-array name="font_size_entries">
+        <item>小</item>
+        <item>标准</item>
+        <item>大</item>
+        <item>特大</item>
+    </string-array>
+    
+    <string-array name="font_size_values">
+        <item>small</item>
+        <item>normal</item>
+        <item>large</item>
+        <item>xlarge</item>
+    </string-array>
+    
+    <!-- 键盘高度 -->
+    <string-array name="keyboard_height_entries">
+        <item>紧凑</item>
+        <item>标准</item>
+        <item>宽松</item>
+        <item>自适应</item>
+    </string-array>
+    
+    <string-array name="keyboard_height_values">
+        <item>compact</item>
+        <item>normal</item>
+        <item>loose</item>
+        <item>adaptive</item>
+    </string-array>
+    
+    <!-- 自动纠错级别 -->
+    <string-array name="auto_correction_level_entries">
+        <item>关</item>
+        <item>低</item>
+        <item>中</item>
+        <item>高</item>
+        <item>激进</item>
+    </string-array>
+    
+    <string-array name="auto_correction_level_values">
+        <item>off</item>
+        <item>low</item>
+        <item>medium</item>
+        <item>high</item>
+        <item>aggressive</item>
+    </string-array>
+    
+    <!-- 预测词数量 -->
+    <string-array name="prediction_count_entries">
+        <item>3个</item>
+        <item>5个</item>
+        <item>8个</item>
+        <item>10个</item>
+    </string-array>
+    
+    <string-array name="prediction_count_values">
+        <item>3</item>
+        <item>5</item>
+        <item>8</item>
+        <item>10</item>
+    </string-array>
+    
+    <!-- 手写识别速度 -->
+    <string-array name="handwriting_speed_entries">
+        <item>快速</item>
+        <item>标准</item>
+        <item>精确</item>
+    </string-array>
+    
+    <string-array name="handwriting_speed_values">
+        <item>fast</item>
+        <item>normal</item>
+        <item>accurate</item>
+    </string-array>
+    
+    <!-- 语音识别模式 -->
+    <string-array name="voice_mode_entries">
+        <item>实时</item>
+        <item>按键</item>
+        <item>自动</item>
+    </string-array>
+    
+    <string-array name="voice_mode_values">
+        <item>realtime</item>
+        <item>button</item>
+        <item>auto</item>
+    </string-array>
+    
+    <!-- 备份频率 -->
+    <string-array name="backup_frequency_entries">
+        <item>从不</item>
+        <item>每天</item>
+        <item>每周</item>
+        <item>每月</item>
+    </string-array>
+    
+    <string-array name="backup_frequency_values">
+        <item>never</item>
+        <item>daily</item>
+        <item>weekly</item>
+        <item>monthly</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <!-- 搜索栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@color/surface">
+
+        <EditText
+            android:id="@+id/search_emoji"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_search_emoji"
+            android:maxLines="1"
+            android:imeOptions="actionSearch"
+            android:padding="8dp"
+            android:background="@drawable/edit_text_bg" />
+
+        <ImageButton
+            android:id="@+id/btn_search_clear"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_clear"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="清除搜索"
+            android:layout_marginStart="8dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- 分类标签 -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/emoji_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        app:tabTextColor="@color/key_text"
+        app:tabSelectedTextColor="@color/primary"
+        app:tabIndicatorColor="@color/primary"
+        app:tabIndicatorHeight="2dp" />
+
+    <!-- 最近使用 -->
+    <TextView
+        android:id="@+id/recent_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_recent_used"
+        android:textSize="14sp"
+        android:textColor="@color/key_text"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="4dp"
+        android:visibility="gone" />
+
+    <HorizontalScrollView
+        android:id="@+id/recent_emoji_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/recent_emoji_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp" />
+
+    </HorizontalScrollView>
+
+    <!-- 表情网格 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/emoji_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
+
+    <!-- 底部功能栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:background="@color/surface">
+
+        <Button
+            android:id="@+id/btn_backspace_emoji"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="⌫"
+            android:layout_marginEnd="4dp"
+            style="@style/KeyboardKey.Function" />
+
+        <Button
+            android:id="@+id/btn_space_emoji"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_key_height"
+            android:layout_weight="2"
+            android:text="空格"
+            android:layout_marginHorizontal="4dp"
+            style="@style/KeyboardKey.Space" />
+
+        <Button
+            android:id="@+id/btn_enter_emoji"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="换行"
+            android:layout_marginStart="4dp"
+            style="@style/KeyboardKey.Function" />
+
+    </LinearLayout>
+
+    <!-- 表情详情 -->
+    <LinearLayout
+        android:id="@+id/emoji_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/surface"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/emoji_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="48sp"
+                android:layout_marginEnd="16dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/emoji_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/key_text"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/emoji_unicode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/key_text" />
+
+                <TextView
+                    android:id="@+id/emoji_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="@color/key_text" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_favorite"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_favorite_border"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="收藏" />
+
+        </LinearLayout>
+
+        <!-- 肤色变体 -->
+        <TextView
+            android:id="@+id/skin_tone_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="肤色变体"
+            android:textSize="14sp"
+            android:textColor="@color/key_text"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/skin_tone_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <!-- 肤色变体按钮将通过代码动态生成 -->
+
+        </LinearLayout>
+
+        <!-- 性别变体 -->
+        <TextView
+            android:id="@+id/gender_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="性别变体"
+            android:textSize="14sp"
+            android:textColor="@color/key_text"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/gender_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <!-- 性别变体按钮将通过代码动态生成 -->
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_insert_emoji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="插入表情"
+            android:layout_marginTop="16dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- 正常状态 -->
+    <item android:state_pressed="false">
+        <shape android:shape="oval">
+            <solid android:color="@color/primary" />
+            <stroke android:width="2dp" android:color="@color/primary_variant" />
+        </shape>
+    </item>
+    
+    <!-- 按下状态 -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/primary_variant" />
+            <stroke android:width="2dp" android:color="@color/primary" />
+        </shape>
+    </item>
+    
+    <!-- 录音状态 -->
+    <item android:state_activated="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/error" />
+            <stroke android:width="2dp" android:color="@color/warning" />
+        </shape>
+    </item>
+    
+</selector>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/keyboard_background"
+    android:padding="4dp">
+
+    <!-- 工具栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:background="@color/surface">
+
+        <!-- 模式指示器 -->
+        <TextView
+            android:id="@+id/mode_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/keyboard_type_qwerty"
+            android:textSize="14sp"
+            android:textColor="@color/key_text"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- 功能按钮 -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_settings"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/menu_settings"
+            android:layout_marginHorizontal="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_theme"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_theme"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/menu_theme"
+            android:layout_marginHorizontal="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_clipboard"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_clipboard"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/menu_clipboard"
+            android:layout_marginHorizontal="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_emoji"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_emoji"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/keyboard_type_emoji"
+            android:layout_marginHorizontal="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_voice"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_voice"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/keyboard_type_voice"
+            android:layout_marginHorizontal="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_handwriting"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_handwriting"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/keyboard_type_handwriting"
+            android:layout_marginHorizontal="4dp" />
+
+        <ImageButton
+            android:id="@+id/btn_mode_switch"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_switch"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="切换输入模式"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <!-- 预测栏 -->
+    <HorizontalScrollView
+        android:id="@+id/prediction_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:paddingVertical="4dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/prediction_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp" />
+
+    </HorizontalScrollView>
+
+    <!-- 键盘容器 -->
+    <FrameLayout
+        android:id="@+id/keyboard_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp" />
+
+    <!-- 数字行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_1"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/one"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_2"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/two"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_3"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/three"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_4"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/four"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_5"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/five"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_6"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/six"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_7"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/seven"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_8"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/eight"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_9"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/nine"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_0"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@string/zero"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 功能行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_comma"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text=","
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_space"
+            style="@style/KeyboardKey.Space"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_key_height"
+            android:layout_weight="3"
+            android:text="空格"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_period"
+            style="@style/KeyboardKey"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="."
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_enter"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1.5"
+            android:text="换行"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 底部功能栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <Button
+            android:id="@+id/key_at"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="@"
+            android:layout_marginHorizontal="2dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/key_slash"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="/"
+            android:layout_marginHorizontal="2dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/key_colon"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text=":"
+            android:layout_marginHorizontal="2dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/key_question"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="?"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_exclamation"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="!"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/key_delete"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1.5"
+            android:text="删除"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

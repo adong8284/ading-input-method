@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ading.inputmethod">
+
+    <!-- 输入法服务权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    
+    <!-- Android 10+ 剪贴板权限 -->
+    <uses-permission android:name="android.permission.READ_CLIPBOARD_IN_BACKGROUND"
+        android:maxSdkVersion="29" />
+    
+    <!-- 系统输入法声明 -->
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="36" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.阿栋输入法"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="31">
+        
+        <!-- 输入法服务 -->
+        <service
+            android:name=".AdingInputMethodService"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <!-- 设置Activity -->
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/settings_title"
+            android:exported="true"
+            android:theme="@style/Theme.阿栋输入法.Settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 剪贴板管理服务 -->
+        <service
+            android:name=".ClipboardService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- 主题配置Activity -->
+        <activity
+            android:name=".ThemeConfigActivity"
+            android:label="@string/theme_config_title"
+            android:exported="false"
+            android:theme="@style/Theme.阿栋输入法.Dialog" />
+
+        <!-- 词库管理Activity -->
+        <activity
+            android:name=".DictionaryManagerActivity"
+            android:label="@string/dictionary_manager_title"
+            android:exported="false" />
+
+        <!-- 手写输入Activity -->
+        <activity
+            android:name=".HandwritingActivity"
+            android:label="@string/handwriting_title"
+            android:exported="false"
+            android:theme="@style/Theme.阿栋输入法.Fullscreen"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- 语音输入Activity -->
+        <activity
+            android:name=".VoiceInputActivity"
+            android:label="@string/voice_input_title"
+            android:exported="false"
+            android:theme="@style/Theme.阿栋输入法.Dialog"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- Emoji选择Activity -->
+        <activity
+            android:name=".EmojiPickerActivity"
+            android:label="@string/emoji_picker_title"
+            android:exported="false"
+            android:theme="@style/Theme.阿栋输入法.Dialog"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!-- 剪贴板历史Activity -->
+        <activity
+            android:name=".ClipboardHistoryActivity"
+            android:label="@string/clipboard_history_title"
+            android:exported="false"
+            android:theme="@style/Theme.阿栋输入法.Dialog" />
+
+        <!-- 广播接收器：监听剪贴板变化 -->
+        <receiver
+            android:name=".ClipboardReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.CLIPBOARD_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 文件提供者（用于主题导出） -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

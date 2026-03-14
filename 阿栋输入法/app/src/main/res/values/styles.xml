@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 基础主题 -->
+    <style name="Theme.阿栋输入法" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:navigationBarColor">?attr/colorPrimary</item>
+    </style>
+    
+    <!-- 设置页面主题 -->
+    <style name="Theme.阿栋输入法.Settings" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+    
+    <!-- 对话框主题 -->
+    <style name="Theme.阿栋输入法.Dialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+    </style>
+    
+    <!-- 全屏主题 -->
+    <style name="Theme.阿栋输入法.Fullscreen" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    <!-- 键盘按键样式 -->
+    <style name="KeyboardKey">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/key_height</item>
+        <item name="android:minWidth">@dimen/key_width</item>
+        <item name="android:background">@drawable/key_background</item>
+        <item name="android:textColor">@color/key_text</item>
+        <item name="android:textSize">@dimen/key_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+    
+    <!-- 九宫格按键样式 -->
+    <style name="KeyboardKey.NineKey" parent="KeyboardKey">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">8dp</item>
+    </style>
+    
+    <!-- 功能键样式 -->
+    <style name="KeyboardKey.Function">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/function_key_height</item>
+        <item name="android:minWidth">@dimen/function_key_width</item>
+        <item name="android:background">@drawable/function_key_background</item>
+        <item name="android:textColor">@color/on_secondary</item>
+        <item name="android:textSize">@dimen/key_function_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+    
+    <!-- 空格键样式 -->
+    <style name="KeyboardKey.Space">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/space_key_height</item>
+        <item name="android:minWidth">@dimen/space_key_width</item>
+        <item name="android:background">@drawable/space_key_background</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:textSize">@dimen/key_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+    
+    <!-- 预测词样式 -->
+    <style name="PredictionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/prediction_background</item>
+        <item name="android:textColor">@color/key_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingHorizontal">12dp</item>
+        <item name="android:paddingVertical">6dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <!-- 表情按钮样式 -->
+    <style name="EmojiButton">
+        <item name="android:layout_width">@dimen/emoji_grid_size</item>
+        <item name="android:layout_height">@dimen/emoji_grid_size</item>
+        <item name="android:background">@drawable/emoji_background</item>
+        <item name="android:textSize">@dimen/emoji_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <!-- 最近使用表情样式 -->
+    <style name="RecentEmojiButton" parent="EmojiButton">
+        <item name="android:layout_width">@dimen/emoji_recent_size</item>
+        <item name="android:layout_height">@dimen/emoji_recent_size</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+    
+    <!-- 手写笔迹样式 -->
+    <style name="HandwritingStroke">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    
+    <!-- 语音波形样式 -->
+    <style name="VoiceWaveBar">
+        <item name="android:layout_width">@dimen/wave_bar_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">@dimen/wave_bar_spacing</item>
+        <item name="android:background">@color/wave_primary</item>
+    </style>
+    
+    <!-- 剪贴板项目样式 -->
+    <style name="ClipboardItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/clipboard_item_height</item>
+        <item name="android:background">@drawable/clipboard_item_background</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginVertical">2dp</item>
+    </style>
+    
+    <!-- 设置项样式 -->
+    <style name="PreferenceItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+    
+    <!-- 对话框按钮样式 -->
+    <style name="DialogButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">12dp</item>
+    </style>
+    
+    <!-- 加载中样式 -->
+    <style name="LoadingIndicator">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateTint">@color/primary</item>
+        <item name="android:indeterminateTintMode">src_in</item>
+    </style>
+    
+    <!-- 工具栏样式 -->
+    <style name="ToolbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/toolbar_height</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:elevation">@dimen/toolbar_elevation</item>
+        <item name="titleTextColor">@color/on_primary</item>
+        <item name="subtitleTextColor">@color/on_primary</item>
+    </style>
+    
+    <!-- 卡片样式 -->
+    <style name="CardStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/card_background</item>
+        <item name="android:elevation">@dimen/elevation_small</item>
+        <item name="android:layout_margin">@dimen/margin_medium</item>
+        <item name="android:padding">@dimen/padding_large</item>
+        <item name="cardCornerRadius">@dimen/corner_radius_medium</item>
+    </style>
+    
+    <!-- 输入框样式 -->
+    <style name="EditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text_bg</item>
+        <item name="android:textColor">@color/on_background</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+    
+    <!-- 按钮样式 -->
+    <style name="ButtonStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:minWidth">@dimen/button_min_width</item>
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:elevation">@dimen/elevation_small</item>
+    </style>
+    
+    <!-- 图标按钮样式 -->
+    <style name="IconButtonStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">12dp</item>
+    </style>
+    
+    <!-- 分隔线样式 -->
+    <style name="DividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/divider_height</item>
+        <item name="android:background">@color/key_border</item>
+        <item name="android:layout_marginVertical">@dimen/margin_medium</item>
+    </style>
+    
+    <!-- 标签样式 -->
+    <style name="LabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/secondary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingVertical">4dp</item>
+    </style>
+    
+    <!-- 值样式 -->
+    <style name="ValueStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/on_background</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingVertical">4dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主色调 -->
+    <color name="primary">#2196F3</color>
+    <color name="primary_variant">#1976D2</color>
+    <color name="secondary">#FF4081</color>
+    <color name="secondary_variant">#F50057</color>
+    
+    <!-- 背景色 -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="error">#F44336</color>
+    
+    <!-- 文字颜色 -->
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_secondary">#000000</color>
+    <color name="on_background">#000000</color>
+    <color name="on_surface">#000000</color>
+    <color name="on_error">#FFFFFF</color>
+    
+    <!-- 键盘颜色 -->
+    <color name="keyboard_background">#F5F5F5</color>
+    <color name="key_normal">#FFFFFF</color>
+    <color name="key_pressed">#E0E0E0</color>
+    <color name="key_text">#212121</color>
+    <color name="key_border">#BDBDBD</color>
+    <color name="key_function">#E3F2FD</color>
+    <color name="key_space">#2196F3</color>
+    
+    <!-- 主题颜色 -->
+    <color name="theme_light_background">#FFFFFF</color>
+    <color name="theme_light_key">#F5F5F5</color>
+    <color name="theme_light_text">#212121</color>
+    
+    <color name="theme_dark_background">#121212</color>
+    <color name="theme_dark_key">#1E1E1E</color>
+    <color name="theme_dark_text">#FFFFFF</color>
+    
+    <color name="theme_eye_protection_background">#F0F8E6</color>
+    <color name="theme_eye_protection_key">#E8F5E9</color>
+    <color name="theme_eye_protection_text">#2E7D32</color>
+    
+    <color name="theme_cyberpunk_background">#0A0A0A</color>
+    <color name="theme_cyberpunk_key">#00FF9D</color>
+    <color name="theme_cyberpunk_text">#00FF9D</color>
+    
+    <color name="theme_ink_wash_background">#FAFAFA</color>
+    <color name="theme_ink_wash_key">#E8EAF6</color>
+    <color name="theme_ink_wash_text">#3F51B5</color>
+    
+    <!-- 状态颜色 -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent_black">#80000000</color>
+    <color name="semi_transparent_white">#80FFFFFF</color>
+    
+    <!-- 波形颜色 -->
+    <color name="wave_primary">#2196F3</color>
+    <color name="wave_secondary">#64B5F6</color>
+    <color name="wave_tertiary">#BBDEFB</color>
+    
+    <!-- 手写笔迹颜色 -->
+    <color name="ink_black">#000000</color>
+    <color name="ink_blue">#2196F3</color>
+    <color name="ink_red">#F44336</color>
+    <color name="ink_green">#4CAF50</color>
+</resources>

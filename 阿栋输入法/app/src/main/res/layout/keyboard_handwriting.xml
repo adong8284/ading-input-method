@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <!-- 工具栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:background="@color/surface">
+
+        <!-- 语言选择 -->
+        <Spinner
+            android:id="@+id/language_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp" />
+
+        <!-- 笔迹颜色 -->
+        <ImageView
+            android:id="@+id/color_black"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_color_black"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <ImageView
+            android:id="@+id/color_blue"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_color_blue"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <ImageView
+            android:id="@+id/color_red"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_color_red"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <ImageView
+            android:id="@+id/color_green"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_color_green"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="4dp"
+            android:layout_marginEnd="8dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- 功能按钮 -->
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清空"
+            android:layout_marginEnd="4dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_undo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="撤销"
+            android:layout_marginEnd="4dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_redo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重做"
+            android:layout_marginEnd="4dp"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_recognize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="识别"
+            style="?android:attr/borderlessButtonStyle" />
+
+    </LinearLayout>
+
+    <!-- 手写区域 -->
+    <android.gesture.GestureOverlayView
+        android:id="@+id/handwriting_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/handwriting_area_height"
+        android:background="@color/background"
+        android:layout_margin="8dp"
+        app:gestureStrokeType="multiple"
+        app:gestureStrokeWidth="@dimen/handwriting_stroke_width"
+        app:fadeDuration="100"
+        app:eventsInterceptionEnabled="true"
+        app:orientation="horizontal" />
+
+    <!-- 识别结果 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:id="@+id/recognition_results"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp" />
+
+    </HorizontalScrollView>
+
+    <!-- 候选词 -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:id="@+id/candidate_words"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp" />
+
+    </HorizontalScrollView>
+
+    <!-- 功能按钮行 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="8dp">
+
+        <Button
+            android:id="@+id/btn_space_handwriting"
+            style="@style/KeyboardKey.Space"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/space_key_height"
+            android:layout_weight="2"
+            android:text="空格"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/btn_enter_handwriting"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="换行"
+            android:layout_marginHorizontal="2dp" />
+
+        <Button
+            android:id="@+id/btn_backspace_handwriting"
+            style="@style/KeyboardKey.Function"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/key_height"
+            android:layout_weight="1"
+            android:text="⌫"
+            android:layout_marginHorizontal="2dp" />
+
+    </LinearLayout>
+
+    <!-- 状态信息 -->
+    <TextView
+        android:id="@+id/handwriting_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/key_text"
+        android:gravity="center"
+        android:paddingVertical="4dp"
+        android:text="@string/hint_handwriting" />
+
+</LinearLayout>
