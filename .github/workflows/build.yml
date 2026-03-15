@@ -1,0 +1,90 @@
+name: Android Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+      
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+      
+    - name: Build with Gradle
+      run: |
+        # 设置Android SDK环境变量
+        export ANDROID_SDK_ROOT=$ANDROID_HOME
+        echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+        
+        # 接受Android SDK许可证
+        yes | $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager --licenses || true
+        
+        # 安装必要的Android SDK组件
+        $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager "platforms;android-34" "build-tools;34.0.0" "platform-tools" || true
+        
+        # 构建调试版APK
+        ./gradlew assembleDebug --stacktrace
+        
+    - name: Upload debug APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-debug-apk
+        path: app/build/outputs/apk/debug/*.apk
+        retention-days: 7
+        
+    - name: Create Release
+      if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+      uses: softprops/action-gh-release@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v1.0.${{ github.run_number }}
+        name: 阿栋输入法 v1.0.${{ github.run_number }}
+        body: |
+          ## 🎉 新版本发布
+          
+          ### 版本号: v1.0.${{ github.run_number }}
+          ### 构建时间: ${{ github.event.head_commit.timestamp }}
+          
+          ### 包含功能:
+          - ✅ 拼音/五笔/英文输入
+          - ✅ 全量Emoji键盘
+          - ✅ 智能主题系统
+          - ✅ 系统级语音输入
+          - ✅ 手写输入
+          - ✅ 剪贴板管理
+          - ✅ 拼音滑行输入
+          - ✅ 超大词库系统
+          
+          ### 下载:
+          - **调试版**: app-debug.apk
+          
+          ### 安装说明:
+          1. 下载APK文件
+          2. 在手机上允许"未知来源"安装
+          3. 打开设置 → 语言和输入法 → 虚拟键盘
+          4. 启用"阿栋输入法"
+          
+          ### 源码:
+          [查看完整源码](https://github.com/${{ github.repository }})
+        draft: false
+        prerelease: false
+        files: |
+          app/build/outputs/apk/debug/*.apk
